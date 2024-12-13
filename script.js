@@ -454,4 +454,24 @@ Politeness in interacting with AI: While AI does not have feelings, politeness w
 
         **Вежливость в общении с ИИ:**
         Хотя ИИ не обладает чувствами, вежливость при общении с ним важна. Это помогает создавать более дружелюбные и этичные технологии. Вежливое общение также улучшает взаимодействие с нейросетью.
-убери перед каждой строчкой цифру а оставь их только где нужно и где нужно обьедени в обыкновенный ткст
+    };
+     document.querySelectorAll('.language-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const selectedLang = event.target.getAttribute('data-lang');
+        const translation = translations[selectedLang];
+        if (translation) {
+            document.getElementById('title').textContent = translation.title;
+            document.getElementById('description').textContent = translation.description;
+        }
+    });
+});
+
+document.getElementById('light-mode').addEventListener('click', () => {
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
+});
+
+document.getElementById('dark-mode').addEventListener('click', () => {
+    document.body.classList.remove('light-mode');
+    document.body.classList.add('dark-mode');
+});
